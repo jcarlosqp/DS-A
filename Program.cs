@@ -7,7 +7,11 @@ namespace DSA
     {
         static void Main(string[] args)
         {
-            CodeSignal.firstDuplicateTest();
+            //CodeSignal.firstDuplicateTest();
+            //CodeSignal.firstNonRepeatingCharacterTests();
+            //CodeSignal.rotateImagenTests();
+            //CodeSignal.isCryptSolutionTests();
+            CodeSignal.remoteKFromListTests();
         }
         static void Print(int[] values){
             if (values == null) {
