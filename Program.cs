@@ -11,7 +11,9 @@ namespace DSA
             //CodeSignal.firstNonRepeatingCharacterTests();
             //CodeSignal.rotateImagenTests();
             //CodeSignal.isCryptSolutionTests();
-            CodeSignal.remoteKFromListTests();
+            //CodeSignal.remoteKFromListTests();
+
+            LeetCode.addTwoNumbersTests();
         }
         static void Print(int[] values){
             if (values == null) {

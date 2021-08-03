@@ -3,26 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DSA
-{
-    public class ListNode<T> {
-        public T Value { get; set; }
-        public ListNode<T> Next { get; set; }
-        public ListNode(T value)
-        {
-            Value=value;
-        }
-    }
-    public class ListHelper<T> {
-        public static void PrintList(ListNode<T> list){
-            var sb = new StringBuilder("LinkedList values: ");
-            var node = list;
-            while(node!=null){
-                sb.Append($"{node.Value}->");
-                node = node.Next;
-            }
-            Console.WriteLine(sb.ToString());
-        }
-    }
+{       
     public partial class CodeSignal
     {
         public static ListNode<int> remoteKFromList(ListNode<int> list, int K) {
@@ -57,6 +38,34 @@ namespace DSA
             Console.WriteLine($"Removed {K} from List:");
             ListHelper<int>.PrintList(result);
 
+        }
+    
+        public static bool isListPalindrome(ListNode<int> l) {
+            var slow=l;
+            var fast=l;
+            while(fast!=null && fast.Next!=null){
+                slow=slow.Next;
+                fast=fast.Next.Next;
+            }
+            ListNode<int> reversed=reverseList(slow);
+            while(reversed!=null){
+                if(l.Value!=reversed.Value)
+                    return false;
+                    
+                l=l.Next;
+                reversed=reversed.Next;
+            }
+            return true;
+        }
+        private static ListNode<int> reverseList(ListNode<int> head){
+            ListNode<int> prev=null;
+            while(head!=null){
+                ListNode<int> next=head.Next;
+                head.Next=prev;
+                prev=head;
+                head=next;
+            }
+            return prev;
         }
     }
 }
